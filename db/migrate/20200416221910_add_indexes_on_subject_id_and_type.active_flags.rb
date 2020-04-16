@@ -1,0 +1,6 @@
+# This migration comes from active_flags (originally 20190305091129)
+class AddIndexesOnSubjectIdAndType < ActiveRecord::Migration[6.0]
+  def change
+    add_index :active_flags_flags, [:subject_id, :subject_type]
+  end
+end
