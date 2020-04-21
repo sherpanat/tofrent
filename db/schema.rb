@@ -10,20 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_222943) do
+ActiveRecord::Schema.define(version: 2020_04_18_190228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "active_flags_flags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "key"
-    t.string "value"
-    t.integer "subject_id"
-    t.string "subject_type"
+    t.string "key", null: false
+    t.string "value", null: false
+    t.uuid "subject_id", null: false
+    t.string "subject_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["subject_id", "subject_type"], name: "index_active_flags_flags_on_subject_id_and_subject_type"
+  end
+
+  create_table "friendships", id: :serial, force: :cascade do |t|
+    t.string "friendable_type"
+    t.uuid "friendable_id"
+    t.uuid "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.uuid "blocker_id"
+    t.integer "status"
+    t.index ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
   end
 
   create_table "torrents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
