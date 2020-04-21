@@ -2,10 +2,10 @@
 class CreateActiveFlagsFlags < ActiveRecord::Migration[6.0]
   def change
     create_table :active_flags_flags, id: :uuid do |t|
-      t.string :key
-      t.string :value
-      t.integer :subject_id
-      t.string :subject_type
+      t.string :key, null: false
+      t.string :value, null: false
+      t.uuid :subject_id, null: false
+      t.string :subject_type, null: false
 
       t.timestamps
     end
