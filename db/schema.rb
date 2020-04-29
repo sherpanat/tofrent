@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(version: 2020_04_28_211346) do
     t.index ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
   end
 
-  create_table "registration_applications", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "registration_memberships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_registration_applications_on_email"
+    t.index ["email"], name: "index_registration_memberships_on_email"
   end
 
   create_table "torrents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

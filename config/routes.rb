@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: "pages#home"
-  resources :registration_applications, only: :create
+  resources :registration_memberships, only: :create
 end
