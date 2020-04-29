@@ -1,1 +1,14 @@
-<h3 class="text-center caca">Test prout</h3>
+<h3 class="text-center">Faire une demande d'adhésion</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 mx-auto">
+      <%= simple_form_for @registration_membership, method: :post do |f| %>
+        <%= f.input_field :email, placeholder: 'Votre email' %>
+        <%= button_tag(type: 'submit', class: 'btn btn-danger') do %>
+          <%= fa_icon "server", class: 'mx-2', size: '2x' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
