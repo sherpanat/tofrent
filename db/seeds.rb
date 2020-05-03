@@ -33,7 +33,8 @@ User.all.each do |user|
       user.friend_request(friend)
       friend.accept_request(user)
     end
+    puts "#{user.nickname} is now friend with #{friend.nickname}"
     users = users.where.not(id: friend.id)
   end
 end
-p "done."
+puts "done."

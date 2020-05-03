@@ -1,6 +1,6 @@
 class RegistrationMembershipsController < ApplicationController
   def create
-    membership = RegistrationMembership.new(membership_params.merge(status: :pending))
+    membership = RegistrationMembership.new(membership_params)
     if membership.save
       flash[:notice] = "Demande d'adhésion a bien été envoyée. Vous recevrez un mail lorsque celle-ci sera traitée."
     else
