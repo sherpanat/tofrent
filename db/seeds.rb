@@ -1,6 +1,8 @@
 Torrent.destroy_all
 User.destroy_all
+AdminUser.destroy_all
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 puts "Create 6 users with..."
 6.times do
   user = User.create!(
