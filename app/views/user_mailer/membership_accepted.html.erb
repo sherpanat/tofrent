@@ -2,7 +2,7 @@
 
 <p>Votre demande d'adhésion a bien été acceptée pour le mail <%= @email %>.</p>
 <p>
-  <%= link_to new_user_registration_url do %>
+  <%= link_to new_user_registration_url + "?email=#{@email}" do %>
     Vous pouvez maintenant compléter votre inscription en ligne.
   <% end %>
 </p>

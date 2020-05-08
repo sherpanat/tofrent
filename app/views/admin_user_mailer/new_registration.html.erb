@@ -1,9 +1,9 @@
 <h1>Nouvelle demande d'adhésion</h1>
 <p>
-  Vous avez reçu une nouvelle demande d'adhésion de la part de <%= @email %>.
+  Vous avez reçu une nouvelle demande d'adhésion de la part de <%= @membership.email %>.
 </p>
 <p>
-  <%= link_to batcave_registration_memberships_url do %>
-    Filtrer les demandes.
+  <%= link_to batcave_registration_membership_url(@membership) do %>
+    Filtrer la demande.
   <% end %>
 </p>
