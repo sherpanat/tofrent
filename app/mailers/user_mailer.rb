@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
   def membership_accepted
     @email = params[:email]
+    @complain_email = AdminUser::Email
     mail(to: @email, subject: "Demande d'adhésion acceptée !")
   end
 

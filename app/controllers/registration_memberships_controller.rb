@@ -6,7 +6,7 @@ class RegistrationMembershipsController < ApplicationController
     else
       flash[:alert] = membership.errors.full_messages.join('. ')
     end
-    AdminUserMailer.with(email: membership.email).new_registration.deliver_now
+    AdminUserMailer.with(membership: membership).new_registration.deliver_now
     redirect_to root_path
   end
 
