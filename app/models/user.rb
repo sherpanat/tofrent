@@ -8,7 +8,9 @@ class User < ApplicationRecord
   has_friendship
   has_many :torrents
 
-  validates :nickname, presence: true, uniqueness: true, length: { minimum: MINIMUM_NICKNAME_LENGTH }
+  validates :nickname, presence: true, uniqueness: true,
+                       length: { minimum: MINIMUM_NICKNAME_LENGTH },
+                       format: { with: /\A[a-zA-Z0-9]+\z/, message: "autorise seulement les chiffres et les lettres" }
   validate :membership_validity
 
 
