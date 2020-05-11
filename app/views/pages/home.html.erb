@@ -2,9 +2,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 mx-auto">
+    <div class="mx-auto">
       <%= simple_form_for @registration_membership, method: :post do |f| %>
-        <%= f.input_field :email, placeholder: 'Votre email' %>
+        <%= f.input :email, placeholder: 'Votre email', wrapper_html: { class: "col-xs-4" }, input_html: { class: "col-xs-8" } %>
         <%= button_tag(type: 'submit', class: 'btn btn-danger') do %>
           <%= fa_icon "server", class: 'mx-2', size: '2x' %>
         <% end %>
