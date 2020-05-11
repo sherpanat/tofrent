@@ -1,0 +1,12 @@
+fr:
+  activerecord:
+    models:
+      user:
+        one: Utilisateur
+        other: Utilisateurs
+    attributes:
+      user:
+        email: Email
+        nickname: Pseudo
+        password: Mot de passe
+        password_confirmation: Confirmation de mot de passe

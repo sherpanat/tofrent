@@ -1,0 +1,10 @@
+fr:
+  errors:
+    messages:
+      blank: "ne peut pas être vide"
+      invalid: "n'a pas le bon format"
+      taken: "est déjà pris par un autre utilisateur"
+      too_short: "doit faire au minimum %{count} caractères"
+  time:
+    formats:
+      long: "%d %B, %Y"
